@@ -1,0 +1,33 @@
+
+[
+    {
+        "id": "77072b96-8b61-48d4-adde-4f6b04f83b94",
+        "first_name": "Ivan",
+        "last_name": "Ivanov",
+        "middle_name": "Ivanovich",
+        "phone": "434398",
+        "email": "24500@mail.com",
+        "date_reg": "2023-05-02",
+        "hashed_password": "$2b$12$hBChVhVSzPZZhQppvB07xekG0eahpUa9evCBcSM8PbfnM7bKeQlA."
+    },
+    {
+        "id": "4ebfb918-703d-4b4d-9c4a-71e476bfcc6f",
+        "first_name": "Dmitry",
+        "last_name": "Dmitriev",
+        "middle_name": "Ivanovich",
+        "phone": "20230630",
+        "email": "hjfhf@mail.ru",
+        "date_reg": "2023-05-06",
+        "hashed_password": "$2b$12$hBChVhVSzPZZhQppvB07xekG0eahpUa9evCBcSM8PbfnM7bKeQlA."
+    },
+    {
+        "id": "8ef5b807-05c2-4c22-a32c-1d62a8f003bd",
+        "first_name": "wasd",
+        "last_name": "wasd",
+        "middle_name": "wasd",
+        "phone": "20234530630",
+        "email": "24500@gmail.com",
+        "date_reg": "2023-05-04",
+        "hashed_password": "$2b$12$hBChVhVSzPZZhQppvB07xekG0eahpUa9evCBcSM8PbfnM7bKeQlA."
+    }
+]

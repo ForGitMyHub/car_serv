@@ -1,0 +1,30 @@
+
+[
+    {
+        "brand": "vaz",
+        "model": "2101",
+        "number": "20230615",
+        "vin": "20230630",
+        "client_id": "77072b96-8b61-48d4-adde-4f6b04f83b94",
+        "description": {},
+        "photo_link": {}
+    },
+    {
+        "brand": "vaz",
+        "model": "2101",
+        "number": "20230615",
+        "vin": "20230630",
+        "client_id": "4ebfb918-703d-4b4d-9c4a-71e476bfcc6f",
+        "description": {},
+        "photo_link": {}
+    },
+    {
+        "brand": "vaz",
+        "model": "2101",
+        "number": "20230615",
+        "vin": "20230630",
+        "client_id": "8ef5b807-05c2-4c22-a32c-1d62a8f003bd",
+        "description": {},
+        "photo_link": {}
+    }
+]

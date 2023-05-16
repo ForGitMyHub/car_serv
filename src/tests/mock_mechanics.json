@@ -1,0 +1,36 @@
+
+[
+    {
+        "first_name": "Nikolay",
+        "last_name": "Ivanov",
+        "middle_name": "Nikolaevich",
+        "phone": "434345398",
+        "email": "24345500@mail.com",
+        "role": "mechanic",
+        "active": true,
+        "date_reg": "2023-05-02",
+        "hashed_password": "$2b$12$q/lwtdKKA0s7oL67GSZyN.nHuPyg48M4a.O8Y9vGrrbeNy3nPy0.m"
+    },
+    {
+        "first_name": "Dmitry",
+        "last_name": "Guev",
+        "middle_name": "Ivanovich",
+        "phone": "43457865398",
+        "email": "23454500@mail.com",
+        "role": "mechanic",
+        "active": true,
+        "date_reg": "2023-05-02",
+        "hashed_password": "$2b$12$.DrqekBK6XC37VKv2ZyBOuK5EIJyvWXApLXHqIz0dp9XRZkdixbC6"
+    },
+    {
+        "first_name": "Roman",
+        "last_name": "Ivanov",
+        "middle_name": "Ivanovich",
+        "phone": "4332534398",
+        "email": "23454500@mail.com",
+        "role": "mechanic",
+        "active": true,
+        "date_reg": "2023-05-02",
+        "hashed_password": "$2b$12$aHyndND.x/Jk6bHgS4fg2.sTT3AfJlltjN3aTpwBz2jNJzC6kXGDC"
+    }
+]

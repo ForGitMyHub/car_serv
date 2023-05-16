@@ -1,0 +1,84 @@
+# docker compose build # Используем эту команду когда что-то изменили в Dockerfile
+# docker compose up # Если изменили только docker-compose
+
+
+# Указываем версию файла
+version: '1.0'
+###########################
+services:
+  main_db:
+    image: postgres:15
+    container_name: main_sql
+    env_file: # Файл с переменными окружения (Вместо environment)
+      - .env_non_dev
+    ports:
+      - 5556:5432
+
+###########################
+  main_redis:
+    image: redis:7
+    container_name: main_redis_cont
+#    env_file:
+#      - .env_non_dev
+    ports:
+      - 6666:6379 # Порт нам нужен только если нам нужен доступ к контейнеру напрямую
+
+###########################
+  carservices:
+    build:
+      context: . # Указываем где находится текущий Dockerfile
+    container_name: cars_app
+    env_file:
+        - .env_non_dev
+    depends_on: # Запускаем только после запуска БД (Зависит от)
+      - main_db
+      - main_redis
+    #    command: ["/carservice_doc/docker/app.sh"] # Скрипт лежит в рабочей папке контейнера
+    command: sh -c "gunicorn src.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind=0.0.0.0:8000"
+
+    ports:
+      - 8000:8000
+
+###########################
+  celery:
+    build:
+      context: . # celery это библиотека, у неё нет образа, берём из билда основного
+    container_name: main_celery
+    env_file:
+      - .env_non_dev # Для работы с redis
+    command: ["/carservice_doc/docker/celery.sh", "celery"] # Второй аргумен для if/elif в скрипте
+    depends_on:
+      - main_redis
+
+###########################
+  flower:
+    build:
+      context: . # celery это библиотека, у неё нет образа, берём из билда основного
+    container_name: main_flower
+    env_file:
+      - .env_non_dev # Для работы с redis
+    command: ["/carservice_doc/docker/celery.sh", "flower"] # Второй аргумен для if/elif в скрипте
+    ports:
+      - 5555:5555
+    depends_on:
+      - main_redis
+
+
+
+#  pgadmin:
+#    container_name: pgadmin
+#    image: dpage/pgadmin4
+#    environment:
+#      - PGADMIN_DEFAULT_EMAIL=pgadmin4@pgadmin.org
+#      - PGADMIN_DEFAULT_PASSWORD=admin
+#    ports:
+#      - "5050:80"
+#    depends_on:
+#      - main_db
+
+
+
+
+
+
+
